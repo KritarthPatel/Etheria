@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import Newsletter from "../components/Newsletter";
 
 const stats = [
   ["120+", "Stays"],
@@ -40,7 +39,7 @@ function FAQ({ q, a }) {
 
 export default function About() {
   return (
-    <section className="relative bg-gradient-to-b from-[#f5efe6] to-[#e7dcc9] py-14 text-zinc-900 ">
+    <section id="about" className="relative scroll-mt-24 bg-gradient-to-b from-[#f5efe6] to-[#e7dcc9] py-14 text-zinc-900 ">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-14">

@@ -79,7 +79,7 @@ export default function Featured() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                <span className="absolute top-4 left-4 text-xs text-white bg-white/25 px-3 py-1 rounded-full backdrop-blur">
+                <span className="absolute top-4 left-4 text-xs text-black bg-white/25 px-3 py-1 rounded-full backdrop-blur">
                   {h.room}
                 </span>
 

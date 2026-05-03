@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-const navItems = ["Home", "Hotels", "Experience", "About"];
+const navItems = [
+  { label: "Home", href: "#" },
+  { label: "Hotels", href: "#" },
+  { label: "Experience", href: "#" },
+  { label: "About", href: "#about" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -43,14 +48,14 @@ export default function Navbar() {
           : "bg-white/10 border border-white/20"
       }`}>
         {navItems.map((item) => (
-          <a key={item} href="#"
+          <a key={item.label} href={item.href}
             className={`group relative px-4 py-1.5 text-sm rounded-full transition-all duration-300 hover:-translate-y-[1px] ${
               scrolled
                 ? "text-zinc-700 hover:text-black"
                 : "text-white/80 hover:text-white"
             }`}
           >
-            {item}
+            {item.label}
             <span className={`absolute left-1/2 -translate-x-1/2 bottom-1 h-[2px] w-0 group-hover:w-3/4 transition-all duration-300 ${
               scrolled ? "bg-amber-700" : "bg-white"
             }`} />
@@ -96,14 +101,16 @@ export default function Navbar() {
             : "bg-white/20 border-white/10"
         }`}>
           {navItems.map((item) => (
-            <a key={item}
+            <a key={item.label}
+              href={item.href}
+              onClick={() => setOpen(false)}
               className={`px-4 py-2.5 rounded-lg text-sm transition-all duration-300 ${
                 scrolled
                   ? "text-zinc-800 hover:bg-black/5"
                   : "text-white hover:bg-white/20"
               }`}
             >
-              {item}
+              {item.label}
             </a>
           ))}
           <button className="mt-3 px-5 py-2.5 rounded-full bg-white text-black text-sm font-semibold w-fit transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
